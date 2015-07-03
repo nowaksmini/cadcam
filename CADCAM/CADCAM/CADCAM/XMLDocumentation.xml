@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CADCAM</name>
+    </assembly>
+    <members>
+        <member name="T:CADCAM.Component">
+            <summary>
+            Base class for elements drawn with spritebatch.
+            </summary>
+        </member>
+        <member name="M:CADCAM.Component.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Component"/> class.
+            </summary>
+        </member>
+        <member name="M:CADCAM.Component.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Component"/> class.
+            </summary>
+            <param name="texture">The texture.</param>
+            <param name="color">The color.</param>
+            <param name="position">The position.</param>
+            <param name="scale">The scale.</param>
+            <param name="angle">The angle.</param>
+        </member>
+        <member name="M:CADCAM.Component.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the specified sprite batch.
+            </summary>
+            <param name="spriteBatch">The sprite batch.</param>
+        </member>
+        <member name="F:CADCAM.Button.Click">
+            <summary>
+            The click function.
+            </summary>
+        </member>
+        <member name="M:CADCAM.Button.#ctor(CADCAM.BState,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Double,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Graphics.SpriteFont,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Button"/> class.
+            </summary>
+            <param name="state">The state.</param>
+            <param name="texture">The texture.</param>
+            <param name="color">The color.</param>
+            <param name="position">The position.</param>
+            <param name="scale">The scale.</param>
+            <param name="angle">The angle.</param>
+            <param name="timer">The timer.</param>
+            <param name="textColor">Color of the text.</param>
+            <param name="spriteFont">The sprite font.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:CADCAM.Button.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Button"/> class.
+            </summary>
+            <param name="texture">The texture.</param>
+            <param name="color">The color.</param>
+            <param name="spriteFont">The sprite font.</param>
+            <param name="text">The text.</param>
+            <param name="textColor">Color of the text.</param>
+        </member>
+        <member name="M:CADCAM.Button.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Button"/> class.
+            </summary>
+        </member>
+        <member name="M:CADCAM.Button.Update(System.Int32,System.Int32,System.Double,System.Boolean,System.Boolean)">
+            <summary>
+            Updates the state of button depends of mouse position on screen.
+            </summary>
+            <param name="mx">The mx of mouse position.</param>
+            <param name="my">My of mouse position.</param>
+            <param name="frameTime">The frame time.</param>
+            <param name="mPressed">if set to <c>true</c> [mouse pressed].</param>
+            <param name="prevMPressed">if set to <c>true</c> [previous mouse pressed].</param>
+        </member>
+        <member name="M:CADCAM.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the specified sprite batch.
+            </summary>
+            <param name="spriteBatch">The sprite batch.</param>
+        </member>
+        <member name="M:CADCAM.Button.OnClick(System.Double)">
+            <summary>
+            Called when [click].
+            </summary>
+            <param name="timer">The timer.</param>
+        </member>
+        <member name="M:CADCAM.Button.CheckIfButtonContainsPoint(System.Int32,System.Int32)">
+            <summary>
+            Checks if button contains point.
+            </summary>
+            <param name="x">The x position of point.</param>
+            <param name="y">The y position of point.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.Button.CheckIfTextureContainsPoint(System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Checks if texture contains point.
+            </summary>
+            <param name="tx">The tx of texture.</param>
+            <param name="ty">The ty of texture.</param>
+            <param name="x">The x of point.</param>
+            <param name="y">The y of point.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.Button.CheckIfRectangleContainsPoint(System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Checks if rectangle of button contains point.
+            </summary>
+            <param name="tx">The tx of rectangle.</param>
+            <param name="ty">The ty of rectangle.</param>
+            <param name="x">The x of point.</param>
+            <param name="y">The y of point.</param>
+            <returns></returns>
+        </member>
+        <member name="T:CADCAM.BState">
+            <summary>
+            Enum for representing button state.
+            </summary>
+        </member>
+        <member name="T:CADCAM.Label">
+            <summary>
+            Simple label without texture, only string drawing enabled.
+            </summary>
+        </member>
+        <member name="M:CADCAM.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Label"/> class.
+            </summary>
+            <param name="spriteFont">The sprite font.</param>
+            <param name="text">The text.</param>
+            <param name="color">The color.</param>
+            <param name="position">The position.</param>
+            <param name="scale">The scale.</param>
+            <param name="angle">The angle.</param>
+        </member>
+        <member name="M:CADCAM.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.Label"/> class.
+            </summary>
+            <param name="spriteFont">The sprite font.</param>
+            <param name="text">The text.</param>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:CADCAM.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the specified sprite batch.
+            </summary>
+            <param name="spriteBatch">The sprite batch.</param>
+        </member>
+        <member name="M:CADCAM.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:CADCAM.CadCamGame">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="M:CADCAM.CadCamGame.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:CADCAM.CadCamGame.LoadContent">
+            <summary>
+            LoadContent will be called once per game and is the place to load
+            all of your content.
+            </summary>
+        </member>
+        <member name="M:CADCAM.CadCamGame.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:CADCAM.RotationMatrix.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.RotationMatrix"/> class.
+            </summary>
+            <param name="a">x-coordinate of a point on the line of rotation.</param>
+            <param name="b">y-coordinate of a point on the line of rotation.</param>
+            <param name="c">z-coordinate of a point on the line of rotation.</param>
+            <param name="uUn">x-coordinate of the line's direction vector (unnormalized).</param>
+            <param name="vUn">y-coordinate of the line's direction vector (unnormalized).</param>
+            <param name="wUn">z-coordinate of the line's direction vector (unnormalized).</param>
+            <param name="theta">The angle of rotation, in radians.</param>
+        </member>
+        <member name="M:CADCAM.RotationMatrix.LongEnough(System.Single,System.Single,System.Single)">
+            <summary>
+            Check whether a vector's length is less than <see ref="TOLERANCE"/> 
+            </summary>
+            <param name="u">The vector's x-coordinate.</param>
+            <param name="v">The vector's y-coordinate.</param>
+            <param name="w">The vector's z-coordinate.</param>
+            <returns>length = Math.sqrt(u^2 + v^2 + w^2) if it is greater than  <see ref="TOLERANCE"/> or -1 if not.</returns>
+        </member>
+        <member name="T:CADCAM.SnakeEngine">
+            <summary>
+            Engine repsonsible for buttons handling and showing snake.
+            </summary>
+        </member>
+        <member name="F:CADCAM.SnakeEngine.NumberOfFigures">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CADCAM.SnakeEngine"/> class.
+            </summary>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.GenerateClickListeners(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+            <summary>
+            Generates the click listeners for all position buttons.
+            </summary>
+            <param name="buttonTexture2D">The button texture2d.</param>
+            <param name="buttonTextSpriteFont">The button text sprite font.</param>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.FindCenterOfRotation(System.Boolean,System.Int32)">
+            <summary>
+            Finds the center of rotation and rotation axis.
+            </summary>
+            <param name="isRight">if set to <c>true</c> [rotation is right direction].</param>
+            <param name="figure">The figure number.</param>
+            <returns>Two points on rotation axis, one on right face other on bottom/top</returns>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.Rotate(Microsoft.Xna.Framework.Vector3[],System.Int32,System.Boolean)">
+            <summary>
+            Rotates figure from specified base tetrahedron around axis 
+            through middle of one of "side's" figures.
+            </summary>
+            <param name="rotationMiddle">The rotation middle's.</param>
+            <param name="figure">The start figure number.</param>
+            <param name="isRight">if set to <c>true</c> [rotation is right direction].</param>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.CheckIfAnythingIsOverLapping">
+            <summary>
+            Checks if anything is over lapping.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.CheckColision(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Checks the colision of two faces.
+            </summary>
+            <param name="t1A">The first point of triangle 1.</param>
+            <param name="t1B">The second point of triangle 1.</param>
+            <param name="t1C">The third point of triangle 1.</param>
+            <param name="t2A">The first point of triangle 2.</param>
+            <param name="t2B">The second point of triangle 2.</param>
+            <param name="t2C">The third point of triangle 2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.CheckIfTriangleIsOnOneSideOfAnotherTriangle(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Checks if triangle is on one side of another triangle.
+            </summary>
+            <param name="t1A">The first point of triangle 1.</param>
+            <param name="t1B">The second point of triangle 1.</param>
+            <param name="t1C">The third point of triangle 1.</param>
+            <param name="t2A">The first point of triangle 2.</param>
+            <param name="t2B">The second point of triangle 2.</param>
+            <param name="t2C">The third point of triangle 2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.CheckIfTriagleIsUnderOtherTriangle(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Checks if triagle is under other triangle.
+            </summary>
+            <param name="t1A">The first point of triangle 1.</param>
+            <param name="t1B">The second point of triangle 1.</param>
+            <param name="t1C">The third point of triangle 1.</param>
+            <param name="t2A">The first point of triangle 2.</param>
+            <param name="t2B">The second point of triangle 2.</param>
+            <param name="t2C">The third point of triangle 2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.InitializeEffect(Microsoft.Xna.Framework.Graphics.BasicEffect,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Initializes the effect (loading, parameter setting, 
+            and technique selection) used for the 3D model.
+            </summary>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.InitializeTransform(System.Single,System.Single)">
+            <summary>
+            Initializes the transforms used for the 3D model.
+            </summary>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.Update(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.BasicEffect,System.Int32,System.Int32)">
+            <summary>
+            Updates the specified game time.
+            </summary>
+            <param name="gameTime">The game time.</param>
+            <param name="basicEffect">The basic effect.</param>
+            <param name="windowWidth">Width of the window.</param>
+            <param name="windowHeight">Height of the window.</param>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Draws the specified sprite batch.
+            </summary>
+            <param name="spriteBatch">The sprite batch.</param>
+            <param name="gameTime">The game time.</param>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.CreateVertexBuffer(Microsoft.Xna.Framework.GraphicsDeviceManager)">
+            <summary>
+            Creates the vertex buffer.
+            </summary>
+            <param name="graphics">The graphics.</param>
+        </member>
+        <member name="M:CADCAM.SnakeEngine.InitializeTetrahedron(System.Int32,System.Boolean)">
+            <summary>
+            Initializes the tetrahedron.
+            </summary>
+            <param name="figure">The figure number.</param>
+            <param name="isUp">Define direction of bottom of figure</param>
+        </member>
+        <member name="T:CADCAM.Triangle">
+            <summary>
+            Base class for representing single tringle
+            </summary>
+        </member>
+    </members>
+</doc>
